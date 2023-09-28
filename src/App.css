@@ -1,16 +1,15 @@
+@import "react-loading-skeleton/dist/skeleton.css";
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
 .App {
   text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -28,11 +27,659 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+.circle-p{
+  border-radius: 50%;
+  width: 40px;
+  display: none;
+  font-weight: bold;
+  background-color: #61dafb;
+  color: #1b1a1a;
+  text-align: center;
+}
+
+
+/*select menu*/
+.select-menu{
+  width: 290px;
+  border: none;
+
+ 
+}
+
+.select-btn{
+  display: flex;
+  height: 18px;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 18px;
+  
+  /*background-color: #E3F2FD;*/
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid black;
+
+}
+
+.select-menu.active .select-btn{
+  transform: rotate(-180deg);
+}
+
+
+
+.option .sbtn-text{
+font-size: 18px;
+color: #333;
+}
+
+.option .option-text{
+font-size: 18px;
+color: #333;
+margin-left: 9px;
+}
+
+.select-menu .options{
+ position: relative;
+ padding: 20px;
+ margin-top: 10px;
+ border-radius: 8px;
+ background-color: #E3F2FD;
+ list-style: none;
+
+ height: 430px;
+  border: none;
+ z-index: 10;
+
+}
+
+.select-menu.active .options{
+   display: block;
+}
+
+
+.options .option{
+  display: flex;
+  height: 18px;
+  padding: 10px  0 ;
+  border-radius: 8px;
+  background-color: #E3F2FD;
+  align-items: center;
+  cursor: pointer;
+
+  
+}
+
+
+
+/*buttons*/
+.btn-group{
+ display: flex;
+ 
+ justify-content: start;
+ padding-left: 4.8rem;
+ margin-bottom: 1.6rem;
+ z-index: 1;
+}
+.btn-group button{
+   padding: 10px;
+   margin: 7px;
+   border: none;
+   border-radius: 50px;
+   width: 100px;
+   font-size: 13px;
+   font-weight: bold;
+  
+
+
+}
+/*MultiStep Form*/
+.multistep-form
+{
+position: absolute;
+
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+  width: 400px;
+  background: gray;  
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px;
+  border-radius: 4px;
+ box-shadow: 0 15px 35px rgba(0,0,0,9);
+  
+ 
+}
+  .multistep-form  .content
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+.second-step  .content
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+.third-step  .content
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+ .first-step  .content h2 
+{
+  font-size: 2em;
+  color: #0f0;
+  text-transform: uppercase;
+ 
+}
+.second-step  .content h2 
+{
+  font-size: 2em;
+  color: #0f0;
+  text-transform: uppercase;
+ 
+}
+.third-step  .content h2 
+{
+  font-size: 2em;
+  color: #0f0;
+  text-transform: uppercase;
+ 
+}
+
+ .multistep-form   input{
+  position: relative;
+  width: 100%;
+  background: #333;
+  border: none;
+  outline: none;
+  padding: 25px 10px 7.5px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+.second-step   .content input{
+  position: relative;
+  width: 100%;
+  background: #333;
+  border: none;
+  outline: none;
+  padding: 25px 10px 7.5px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1em;
+}
+.third-step   .content input{
+  position: relative;
+  width: 100%;
+  background: #333;
+  border: none;
+  outline: none;
+  padding: 25px 10px 7.5px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+
+.back-next{
+ 
+ /* position: absolute;
+
+  top: 67%;
+  left: 31%;*/
+ z-index: 1300;
+
+
+}
+
+.back-next button{
+ 
+ /* padding: 10px;
+  background: #0f0;
+  color: #000;
+  font-weight: 600;
+  font-size: 1.35em;
+  letter-spacing: 0.05em;
+  cursor: pointer;*/
+
+  
+  padding: 9px;
+  border-radius: 20px;
+  width: 180px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #E3F2FD;
+  border: none;
+  
+ 
+ }
+
+
+
+
+/*Login Form*/
+
+
+section 
+{
+ 
+  min-height: 100vh;
+  background: #fff;
+
+  position: absolute;
+  width: 100vw;
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+
+
+
+section .login 
+{
+  position: absolute;
+  width: 400px;
+ /* background: #222;  */
+ background: gray; 
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  border-radius: 4px;
+  box-shadow: 0 15px 35px rgba(0,0,0,9);
+}
+section .signup 
+{
+  position: absolute;
+  width: 400px;
+  background: #222;  
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  border-radius: 4px;
+  box-shadow: 0 15px 35px rgba(0,0,0,9);
+}
+section .login .content 
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+section .signup .content 
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+section .login  .content h2 
+{
+  font-size: 2em;
+  color: #0f0;
+  text-transform: uppercase;
+ 
+}
+section .signup  .content h2 
+{
+  font-size: 2em;
+  color: #0f0;
+  text-transform: uppercase;
+ 
+}
+section .login .content .form 
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+section .signup .content .form 
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+section .login .content .form .inputBox
+{
+  position: relative;
+  width: 100%;
+}
+section .signup .content .form .inputBox
+{
+  position: relative;
+  width: 100%;
+}
+section .login .content .form .inputBox input 
+{
+  position: relative;
+  width: 100%;
+  background: #333;
+  border: none;
+  outline: none;
+  padding: 25px 10px 7.5px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1em;
+}
+section .signup .content .form .inputBox input 
+{
+  position: relative;
+  width: 100%;
+  background: #333;
+  border: none;
+  outline: none;
+  padding: 25px 10px 7.5px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1em;
+}
+section .login .content .form .inputBox i 
+{
+  position: absolute;
+  left: 0;
+  padding: 15px 10px;
+  font-style: normal;
+  color: #aaa;
+  transition: 0.5s;
+  pointer-events: none;
+}
+.login .content .form .inputBox input:focus ~ i,
+.login .content .form .inputBox input:valid ~ i
+{
+  transform: translateY(-7.5px);
+  font-size: 0.8em;
+  color: #fff;
+}
+.login .content .form .links 
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.login .content .form .links .Link
+{
+  color: #fff;
+  text-decoration: none;
+}
+.login .content .form .links .Link:nth-child(2)
+{
+  color: #0f0;
+  font-weight: 600;
+}
+
+
+
+.login .content .form .inputBox input[type="submit"]
+{
+  padding: 10px;
+  background: #0f0;
+  color: #000;
+  font-weight: 600;
+  font-size: 1.35em;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+.signup .content .form .inputBox input[type="submit"]
+{
+  padding: 10px;
+  background: #0f0;
+  color: #000;
+  font-weight: 600;
+  font-size: 1.35em;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+input[type="submit"]:active
+{
+  opacity: 0.6;
+}
+@media (max-width: 900px)
+{
+  section span 
+  {
+    width: calc(10vw - 2px);
+    height: calc(10vw - 2px);
   }
-  to {
-    transform: rotate(360deg);
+}
+@media (max-width: 600px)
+{
+  section span 
+  {
+    width: calc(20vw - 2px);
+    height: calc(20vw - 2px);
   }
+}
+
+
+
+/*Transactions*/
+
+h2 {
+  font-size: 21px;
+  color: #272626;
+  text-align: start;
+  padding-left: 40px;
+ 
+ 
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  
+  padding: 16px;
+  background-color: inherit;
+  font-weight: 300;
+  margin-top: none;
+}
+
+.custom-table {
+  min-width: 1000px;
+  border-collapse: collapse;
+}
+
+.custom-table thead tr,
+.custom-table thead th {
+  border-top: none;
+  border-bottom: none;
+  color: #1b1a1a;
+}
+
+
+.custom-table tbody td {
+  color: #777;
+  font-weight: 400;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  font-weight: 300;
+
+  
+}
+
+.custom-table tbody tr:not(.spacer) {
+  border-radius: 7px;
+  overflow: hidden;
+  -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease; }
+
+
+
+.custom-table tbody tr th,
+.custom-table tbody tr td {
+  background: inherit;
+  border: none;
+}
+
+.custom-table tbody tr.spacer td {
+  padding: 0;
+  height: 3px;
+  border-radius: 0;
+
+  background: transparent;
+}
+
+
+
+
+.custom-table tbody tr:hover  {
+  color: #222121;
+  background: #E3F2FD;
+  border-radius: 70px;
+ 
+}
+
+/*send button*/
+
+.send-btn{
+  padding: 9px;
+  border-radius: 20px;
+  width: 180px;
+  margin-top:25px;
+  margin-left: 23px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #E3F2FD;
+  border: none;
+}
+
+
+/*Dashboard*/
+
+.dashboard-content{
+  display: flex;
+
+}
+
+.data-dashboard{
+  position: absolute;
+  top: 50px;
+  left: 0;
+}
+
+.side-menu{
+  font-family: 'Poppins', sans-serif;
+list-style: none;
+ 
+}
+
+
+
+
+
+.side-menu  {
+  margin: 2.5rem;
+  text-align: start ;
+  
+  
+}
+
+.side-menu li{
+  margin-bottom: 14px;
+
+}
+
+.side-menu li span  {
+ 
+  font-weight: lighter;
+  padding: 11px ;
+ 
+  text-align: center;
+  font-size: 16px;
+
+  color: #777;
+  transform: translate(1.1) 0.5s;
+}
+
+.side-menu li span  :hover {
+  color: #2d2e2d;
+  
+}
+.column1{
+  width: 20%;
+  height: 100vh;
+  padding: 10px;
+  border: none;
+}
+
+.column2{
+  width: 80%;
+  padding: 10px;
+  border: none;
+  position: relative;
+}
+
+.box-group{
+  height: 200px;
+  width: 100%;
+  
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  margin-bottom: 0;
+  z-index: 1;
+}
+
+.box{
+  height: 100%;
+  width: 20%;
+  color:grey;
+  background-color: #e6e5e5;
+  border: none;
+  border-radius: 13px;
+  
+}
+
+.bar{
+  display: flex;
+  gap: 18px;
+  justify-content: end;
+  margin-bottom: 24px;
+  margin-right: 18px;
 }
