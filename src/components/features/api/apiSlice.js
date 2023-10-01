@@ -4,10 +4,11 @@ import {setCredentials} from '../auth/authSlice'
 
 //hashedPassword=await bcrypt.hash(password,10).lean().exec()
 
+const apiUrl=process.env.API
 
 const baseQuery=fetchBaseQuery({
 
-  baseUrl: "http://localhost:3001",
+  baseUrl: apiUrl,
  
   credentials:'include',
  

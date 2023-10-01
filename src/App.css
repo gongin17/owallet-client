@@ -1,5 +1,4 @@
-@import "react-loading-skeleton/dist/skeleton.css";
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 *
 {
   margin: 0;
@@ -7,10 +6,7 @@
   box-sizing: border-box;
   font-family: 'Quicksand', sans-serif;
 }
-.App {
-  text-align: center;
 
-}
 
 .App-header {
   background-color: #282c34;
@@ -31,7 +27,7 @@
 .circle-p{
   border-radius: 50%;
   width: 40px;
-  display: none;
+
   font-weight: bold;
   background-color: #61dafb;
   color: #1b1a1a;
@@ -39,76 +35,6 @@
 }
 
 
-/*select menu*/
-.select-menu{
-  width: 290px;
-  border: none;
-
- 
-}
-
-.select-btn{
-  display: flex;
-  height: 18px;
-  padding: 14px;
-  border-radius: 8px;
-  font-size: 18px;
-  
-  /*background-color: #E3F2FD;*/
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  border: 1px solid black;
-
-}
-
-.select-menu.active .select-btn{
-  transform: rotate(-180deg);
-}
-
-
-
-.option .sbtn-text{
-font-size: 18px;
-color: #333;
-}
-
-.option .option-text{
-font-size: 18px;
-color: #333;
-margin-left: 9px;
-}
-
-.select-menu .options{
- position: relative;
- padding: 20px;
- margin-top: 10px;
- border-radius: 8px;
- background-color: #E3F2FD;
- list-style: none;
-
- height: 430px;
-  border: none;
- z-index: 10;
-
-}
-
-.select-menu.active .options{
-   display: block;
-}
-
-
-.options .option{
-  display: flex;
-  height: 18px;
-  padding: 10px  0 ;
-  border-radius: 8px;
-  background-color: #E3F2FD;
-  align-items: center;
-  cursor: pointer;
-
-  
-}
 
 
 
@@ -247,27 +173,10 @@ transform: translate(-50%, -50%);
 
 
 .back-next{
- 
- /* position: absolute;
-
-  top: 67%;
-  left: 31%;*/
  z-index: 1300;
-
-
 }
 
-.back-next button{
- 
- /* padding: 10px;
-  background: #0f0;
-  color: #000;
-  font-weight: 600;
-  font-size: 1.35em;
-  letter-spacing: 0.05em;
-  cursor: pointer;*/
-
-  
+.back-next button{  
   padding: 9px;
   border-radius: 20px;
   width: 180px;
@@ -276,8 +185,6 @@ transform: translate(-50%, -50%);
   text-align: center;
   background-color: #E3F2FD;
   border: none;
-  
- 
  }
 
 
@@ -310,7 +217,6 @@ section .login
 {
   position: absolute;
   width: 400px;
- /* background: #222;  */
  background: gray; 
   z-index: 1000;
   display: flex;
@@ -580,32 +486,28 @@ h2 {
   padding: 9px;
   border-radius: 20px;
   width: 180px;
-  margin-top:25px;
-  margin-left: 23px;
+  margin:25px;
   font-size: 16px;
   font-weight: bold;
-  text-align: center;
-  background-color: #E3F2FD;
+  background-color: #addacd;
   border: none;
+  display:flex;
+  justify-content: center;
 }
 
 
-/*Dashboard*/
 
-.dashboard-content{
-  display: flex;
 
-}
-
-.data-dashboard{
-  position: absolute;
-  top: 50px;
-  left: 0;
-}
 
 .side-menu{
   font-family: 'Poppins', sans-serif;
 list-style: none;
+ transition: all .3s ease-out;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  position: fixed;
+  width: 200px;
+  height: 100vh;
  
 }
 
@@ -641,40 +543,45 @@ list-style: none;
   color: #2d2e2d;
   
 }
-.column1{
-  width: 20%;
-  height: 100vh;
-  padding: 10px;
-  border: none;
-}
 
-.column2{
-  width: 80%;
-  padding: 10px;
-  border: none;
-  position: relative;
-}
+
+
+
+
 
 .box-group{
   height: 200px;
   width: 100%;
-  
+  margin-bottom: 40px;
   display: flex;
-  justify-content: end;
+  justify-content: center;
   gap: 10px;
-  margin-bottom: 0;
-  z-index: 1;
+ 
+ 
 }
 
 .box{
   height: 100%;
-  width: 20%;
-  color:grey;
+  width: 25%;
+  color:rgb(12, 12, 12);
+  font-size: 28px;
+  font-weight: bold;
   background-color: #e6e5e5;
   border: none;
   border-radius: 13px;
-  
+  display:flex;
+  flex-direction: column;
+ 
+  justify-content:space-evenly;
+ 
 }
+
+.box span{
+  font-size: 14px;
+  color:gray;
+}
+
+
 
 .bar{
   display: flex;
@@ -683,3 +590,58 @@ list-style: none;
   margin-bottom: 24px;
   margin-right: 18px;
 }
+
+
+
+
+/*Dashboard*/
+
+.dashboard-content{
+  display: flex;
+  padding-top: 40px;
+
+}
+
+.column1{
+  width: 20%;
+  height: 100vh;
+  border: none;
+}
+
+.column2{
+  width: 80%;
+  padding: 10px;
+  border: none;
+  display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+
+:root {
+  --bg-color-light: #ffffff;
+  --text-color-light: #000000;
+}
+
+/* Dark Mode Styles */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color-dark: #121212;
+    --text-color-dark: #ffffff;
+  }
+}
+
+.App {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+  text-align: center;
+}
+
+
+.App .dark-mode {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+
+

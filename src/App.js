@@ -8,10 +8,12 @@ import Login from "./components/features/auth/Login";
 import LoginPersist from "./components/features/auth/loginPersist";
 import PrivateRoute from "./components/features/auth/privateRoute";
 
+
 function App() {
   return (
     <div className="App">
       <Routes>
+
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
@@ -19,8 +21,9 @@ function App() {
 
         <Route element={<LoginPersist />}>
           <Route element={<PrivateRoute />}>
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/send" element={<SendMoney />} />
+          
+            <Route path="/dashboard" element={<><Dashboard /></>} />
+            <Route path="/send" element={<><SendMoney /></>} />
           </Route>
         </Route>
       </Routes>
