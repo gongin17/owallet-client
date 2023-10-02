@@ -24,7 +24,6 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    //if (verifyUP) console.log("now login can be posted", verifyUP);
 
     try {
       const { accessToken } = await login({ username, password }).unwrap();
@@ -38,6 +37,7 @@ const Login = () => {
     } catch (err) {
       console.log(err);
     }
+    
   };
 
   if (isLoading) return <div>Loading...</div>;

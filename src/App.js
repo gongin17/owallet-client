@@ -21,9 +21,8 @@ function App() {
 
         <Route element={<LoginPersist />}>
           <Route element={<PrivateRoute />}>
-          
-            <Route path="/dashboard" element={<><Dashboard /></>} />
-            <Route path="/send" element={<><SendMoney /></>} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/send" element={<SendMoney />} />
           </Route>
         </Route>
       </Routes>

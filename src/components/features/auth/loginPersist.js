@@ -36,7 +36,6 @@ const LoginPersist = () => {
   },[]);
 
 
- //useEffect(()=>{ console.log("token when render",token)},[isLoading])
 
   let content;
 

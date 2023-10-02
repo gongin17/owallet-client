@@ -5,7 +5,7 @@ const usePersist = () => {
      true
   );
 
-  //JSON.parse(localStorage.getItem("persist", persist)) || 
+
 
  useEffect(() => {
     localStorage.setItem("persist", JSON.stringify(persist));

@@ -10,13 +10,11 @@ const apiUrl=process.env.REACT_APP_API
 const baseQuery=fetchBaseQuery({
 
   baseUrl: apiUrl,
- 
   credentials:'include',
- 
+
   prepareHeaders:(headers, {getState})=>{
     
    const token =getState().auth.token
-
    if(token) headers.set("authorization",`Bearer ${token}`)
 
    return headers
@@ -43,7 +41,6 @@ const refreshResult= await baseQuery('/auth/refresh',api,extraOptions)
   }else{
 
      if(refreshResult?.error?.status===403){
-      //refreshResult.error?.data?.message="your login has expired"
       console.log("your login has expired")
      }
 
