@@ -2,9 +2,10 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import {setCredentials} from '../auth/authSlice'
 
 
-//hashedPassword=await bcrypt.hash(password,10).lean().exec()
 
-const apiUrl=process.env.API
+
+const apiUrl=process.env.REACT_APP_API
+
 
 const baseQuery=fetchBaseQuery({
 
