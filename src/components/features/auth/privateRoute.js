@@ -4,7 +4,7 @@ import useAuth from '../../../hooks/useAuth'
 const PrivataRoute = () => {
     const location = useLocation()
     const { username } = useAuth()
-
+      console.log("username",username)
     const content = (
         username
             ? <Outlet />
