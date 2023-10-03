@@ -6,32 +6,34 @@ import { selectCurrentToken } from "./authSlice";
 import { useRefreshMutation } from "./authApiSlice";
 
 const LoginPersist = () => {
+  
   const [persist] = usePersist();
   const token = useSelector(selectCurrentToken);
-
   const [done, setDone] = useState(false);
+  const Ran= useRef(false)
+
 
   const [refresh, { isUninitialized, isLoading, isSuccess, isError, error }] =
     useRefreshMutation();
 
   useEffect(() => {
 
-      let isMounted=true
-      
-    const verifyRefreshToken = async () => {
-      console.log("verify refresh token");
-      try {
-        await refresh();
-        setDone(true);
-      } catch (err) {
-        console.log(err);
-      }
-     
-    };
+    if(Ran.current===true || process.env.MODE_ENV !=="development")  {
 
-  
-   if (!token && persist) verifyRefreshToken()
-   return ()=> isMounted=false
+      const verifyRefreshToken = async () => {
+        console.log("verify refresh token");
+        try {
+          await refresh();
+          setDone(true);
+        } catch (err) {
+          console.log(err);
+        } 
+      };
+         
+      if (!token && persist) verifyRefreshToken()
+    }
+      
+     return ()=> Ran.current=true
    
   },[]);
 
