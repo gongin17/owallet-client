@@ -10,12 +10,8 @@ const SecondStep = ({ formData, setFormData }) => {
 
   return (
   
-       
-
     <div>
         <div>
-         
-         
           <input
             type="text"
             placeholder="Full Name"
@@ -23,15 +19,16 @@ const SecondStep = ({ formData, setFormData }) => {
             onChange={onChangeHandlerName}
           />
         </div>
+
         <div>
-        
           <input
-            type="text"
+            type="email"
             placeholder="Email"
             required
             onChange={onChangeHandlerEmail}
           />
         </div>
+
       </div>
   
   );

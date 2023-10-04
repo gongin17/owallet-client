@@ -1,8 +1,8 @@
-import React from "react";
-import { useState ,useEffect } from "react";
+import React , { useState ,useEffect } from "react";
 import FirstStep from "./FirstStep";
 import SecondStep from "./SecondStep";
 import ThirdStep from "./ThirdStep";
+import '../css/stepsform.css'
 import { useCreateNewTransactionMutation } from './features/transactions/transactionsSlice'
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -14,7 +14,7 @@ const SendMoney = () => {
     fullname: '',
     email: '',
     account_number: null,
-    amount:20,
+    amount:'',
     type:"deposit",
   });
   const navigate=useNavigate()
@@ -30,7 +30,7 @@ console.log("form data is :",formData)
   const handleSubmit = async(e) => {
     e.preventDefault()
     setPage(prev=>prev + 1);
-    //&& formData
+   
     if(page===2 ){
       try{
         await createNewTransation( {  amount: 20, type: "deposit" })
@@ -41,9 +41,6 @@ console.log("form data is :",formData)
       }
       
     }
-  
-   // if (page > 2) setPage(0);///
-    //console.log('functin page',page)
    
   };
 
@@ -59,8 +56,6 @@ console.log("form data is :",formData)
       default:
         return <FirstStep  formData={formData} setFormData={setFormData} />;
 
-
-        //className="back-next"
     }
   };
 
@@ -71,10 +66,13 @@ console.log("form data is :",formData)
       </div>
    
       <div className="back-next">
-      <button  onClick={handleSubmit}>
+      {page > 0 && <div><button  onClick={() => setPage(prev=>prev - 1)}>Back</button></div>}
+      <div>
+        <button  onClick={handleSubmit}>
         { page === 0 || page === 1 ? "Next" : "Submit"}
-      </button>
-      {page > 0 &&<button  onClick={() => setPage(prev=>prev - 1)}>Back</button>}
+        </button>
+      </div>
+      
       </div>
       
      

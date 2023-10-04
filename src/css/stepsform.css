@@ -1,0 +1,60 @@
+.multistep-form
+{
+position: absolute;
+top: 35%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 400px;
+background: gray;  
+  z-index: 2;
+  padding: 40px;
+  border-radius: 4px;
+ box-shadow: 0 15px 35px rgba(0,0,0,9);
+  
+ 
+}
+
+
+
+.multistep-form h2 
+{
+  font-size: 2em;
+  color: #0f0;
+  text-transform: uppercase;
+ 
+}
+
+
+
+
+.multistep-form input{
+  width: 100%;
+  background: #333;
+  border: none;
+  outline: none;
+  padding: 25px 10px 7.5px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+
+.back-next{
+  display: flex;
+  justify-content: space-around;
+  gap:25px;
+}
+
+.back-next button{  
+  padding: 9px;
+  border-radius: 20px;
+  width: 120px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 15px;
+  background-color: #E3F2FD;
+  border: none;
+ 
+ }

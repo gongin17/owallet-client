@@ -1,5 +1,5 @@
 import  { useState } from "react";
-import "../App.css";
+import '../css/table.css';
 import { useGetTransactionsQuery } from "./features/transactions/transactionsSlice";
 import { useSelector } from "react-redux";
 

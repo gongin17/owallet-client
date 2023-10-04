@@ -94,97 +94,28 @@ const Dashboard = () => {
       <div className="dashboard-content">  
         <div className="column1">
           <ul className="side-menu">
+        
             <li>
               <FaHome style={{ fontSize: "23px", color: "grey" }} />
               <span>Home</span>
             </li>
-            <li>
-              <FaCreditCard style={{ fontSize: "23px", color: "grey" }} />
-               <div className={`App ${darkMode ? 'dark-mode' : ''}`}>
-      
-      <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
-    </div>
-            </li>
-            <li>
-              <FaHornbill style={{ fontSize: "25px", color: "grey" }} />
-              <span>Bills</span>
-            </li>
+         
             <li>
               <FaReceipt style={{ fontSize: "23px", color: "grey" }} />
               <span>Recipients</span>
             </li>
+            
             <li>
               <FaEdit style={{ fontSize: "23px", color: "grey" }} />
               <span>Manage</span>
             </li>
-            <li>
-              <FaHome style={{ fontSize: "23px", color: "grey" }} />
-              <span>Home</span>
-            </li>
-            <li>
-              <FaCreditCard style={{ fontSize: "23px", color: "grey" }} />
-               <div className={`App ${darkMode ? 'dark-mode' : ''}`}>
-      
-      <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
-    </div>
-            </li>
+         
             <li>
               <FaHornbill style={{ fontSize: "25px", color: "grey" }} />
               <span>Bills</span>
             </li>
-            <li>
-              <FaReceipt style={{ fontSize: "23px", color: "grey" }} />
-              <span>Recipients</span>
-            </li>
-            <li>
-              <FaEdit style={{ fontSize: "23px", color: "grey" }} />
-              <span>Manage</span>
-            </li>
-            <li>
-              <FaHome style={{ fontSize: "23px", color: "grey" }} />
-              <span>Home</span>
-            </li>
-            <li>
-              <FaCreditCard style={{ fontSize: "23px", color: "grey" }} />
-               <div className={`App ${darkMode ? 'dark-mode' : ''}`}>
-      
-      <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
-    </div>
-            </li>
-            <li>
-              <FaHornbill style={{ fontSize: "25px", color: "grey" }} />
-              <span>Bills</span>
-            </li>
-            <li>
-              <FaReceipt style={{ fontSize: "23px", color: "grey" }} />
-              <span>Recipients</span>
-            </li>
-            <li>
-              <FaEdit style={{ fontSize: "23px", color: "grey" }} />
-              <span>Manage</span>
-            </li>
-            <li>
-              <FaHome style={{ fontSize: "23px", color: "grey" }} />
-              <span>Home</span>
-            </li>
-            <li>
-              <FaCreditCard style={{ fontSize: "23px", color: "grey" }} />
-               <div className={`App ${darkMode ? 'dark-mode' : ''}`}>
-  
-    </div>
-            </li>
-            <li>
-              <FaHornbill style={{ fontSize: "25px", color: "grey" }} />
-              <span>Bills</span>
-            </li>
-            <li>
-              <FaReceipt style={{ fontSize: "23px", color: "grey" }} />
-              <span>Recipients</span>
-            </li>
-            <li>
-              <FaEdit style={{ fontSize: "23px", color: "grey" }} />
-              <span>Manage</span>
-            </li>
+           
+         
           </ul>
         </div>
 

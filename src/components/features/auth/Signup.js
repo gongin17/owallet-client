@@ -1,4 +1,5 @@
 import { useState } from "react";
+import '../../../css/signup.css'
 import { useSignupMutation } from "./authApiSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -40,39 +41,44 @@ const Signup = () => {
 
           <form className="form" onSubmit={handleSubmit}>
             <div className="inputBox">
+              
+              <input
+                type="text"
+                onChange={(e) => setUsername(e.target.value)}
+              />
               <i>username</i>
+            </div>
+            <div className="inputBox">
+              
               <input
                 type="text"
                 onChange={(e) => setUsername(e.target.value)}
               />
-            </div>
-            <div className="inputBox">
               <i>full name</i>
+            </div>
+            <div className="inputBox">
+             
               <input
                 type="text"
                 onChange={(e) => setUsername(e.target.value)}
               />
+               <i>email</i>
             </div>
             <div className="inputBox">
-              <i>email</i>
-              <input
-                type="text"
-                onChange={(e) => setUsername(e.target.value)}
-              />
-            </div>
-            <div className="inputBox">
-              <i>password</i>
+             
               <input
                 type="password"
                 onChange={(e) => setPassword(e.target.value)}
               />
+               <i>password</i>
             </div>
             <div className="inputBox">
-              <i>type password again</i>
+             
               <input
                 type="password"
                 onChange={(e) => setPassword(e.target.value)}
               />
+               <i>type password again</i>
             </div>
             <div className="inputBox">
               <input type="submit" value=" Sign up " />
