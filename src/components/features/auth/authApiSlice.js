@@ -20,9 +20,9 @@ import { logOut ,setCredentials } from "./authSlice";
         url: "/auth/logout",
         method: "POST",
       }),
-      async onQueryStarted(arg, { dispatch, queryFulfilled }) {
+      async  onQueryStarted(arg, { dispatch, queryFulfilled }) {
         try {
-          await queryFulfilled;
+          await queryFulfilled ;
 
           dispatch(logOut());
           dispatch(apiSlice.util.resetApiState());

@@ -1,7 +1,8 @@
-import  { useState } from "react";
+import React , { useState } from "react";
+import {memo} from "react"
 import '../css/table.css';
 import { useGetTransactionsQuery } from "./features/transactions/transactionsSlice";
-import { useSelector } from "react-redux";
+
 
 const Transactions = () => {
   const {
@@ -36,7 +37,6 @@ const Transactions = () => {
                 <td>{entities[id].id}</td>
                 <td>{entities[id].type}</td>
                 <td>{entities[id].amount}</td>
-
                 <td>{entities[id].created_at}</td>
               </tr>
             ))}
@@ -51,4 +51,6 @@ const Transactions = () => {
   return content;
 };
 
-export default Transactions;
+const memoizedTransactions=memo(Transactions)
+
+export default memoizedTransactions;

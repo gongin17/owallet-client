@@ -10,10 +10,9 @@ import usePersist from "../../../hooks/usePersist";
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
   const [persist, setPersist] = usePersist();
 
-  const [login, { isLoading, error }] = useLoginMutation();
+  const [login, { isLoading, error ,isError}] = useLoginMutation();
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -40,18 +39,21 @@ const Login = () => {
     
   };
 
-  if (isLoading) return <div>Loading...</div>;
+ 
+ // if (isLoading) return <div>Loading...</div>;
+  
+  //else if(isError){ return <p style={{color:"red"}}>{error.data.message}</p>}  
 
   return (
-    <section>
-      <div  className="login">
-       <div className="content"> 
-      <h2>Sign In</h2>
-    
-    
+    <section>   
+      <div className="login"> 
+        <div className="content"> 
+       <h3>Sign In</h3>
+        {isLoading ?<div>Loading...</div>:null}
+        {isError?<p style={{color:"#ff0000"}}>{error.data.message}</p>:null}
+
       <form className="form" onSubmit={handleSubmit}>
         <div className="inputBox">
-          
           <input type="text" onChange={(e) => setUsername(e.target.value)} />
           <i>Username</i>
         </div>

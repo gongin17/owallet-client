@@ -30,97 +30,10 @@
 
 
 }
-/*MultiStep Form*/
 
 
 
 
-
-
-
-/*Login Form*/
-
-
-
-
-
-
-/*Transactions*/
-
-h2 {
-  font-size: 21px;
-  color: #272626;
-  text-align: start;
-  padding-left: 40px;
- 
- 
-}
-
-.content {
-  display: flex;
-  justify-content: center;
-  
-  padding: 16px;
-  background-color: inherit;
-  font-weight: 300;
-  margin-top: none;
-}
-
-.custom-table {
-  min-width: 1000px;
-  border-collapse: collapse;
-}
-
-.custom-table thead tr,
-.custom-table thead th {
-  border-top: none;
-  border-bottom: none;
-  color: #1b1a1a;
-}
-
-
-.custom-table tbody td {
-  color: #777;
-  font-weight: 400;
-  padding-bottom: 20px;
-  padding-top: 20px;
-  font-weight: 300;
-
-  
-}
-
-.custom-table tbody tr:not(.spacer) {
-  border-radius: 7px;
-  overflow: hidden;
-  -webkit-transition: .3s all ease;
-    -o-transition: .3s all ease;
-    transition: .3s all ease; }
-
-
-
-.custom-table tbody tr th,
-.custom-table tbody tr td {
-  background: inherit;
-  border: none;
-}
-
-.custom-table tbody tr.spacer td {
-  padding: 0;
-  height: 3px;
-  border-radius: 0;
-
-  background: transparent;
-}
-
-
-
-
-.custom-table tbody tr:hover  {
-  color: #222121;
-  background: #E3F2FD;
-  border-radius: 70px;
- 
-}
 
 /*send button*/
 

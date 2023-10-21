@@ -13,7 +13,7 @@ export const transacationsApiSlice = apiSlice.injectEndpoints({
 
     getTransactions: builder.query({
       query: () => "/api/transaction",
-      
+      tagTypes: ["Transaction","User"],
       transformResponse: (responseData) => {
         console.log("response data ", responseData);
         return transactionsAdapter.setAll(initialeState, responseData);

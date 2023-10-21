@@ -2,10 +2,11 @@ import React , { useState ,useEffect } from "react";
 import FirstStep from "./FirstStep";
 import SecondStep from "./SecondStep";
 import ThirdStep from "./ThirdStep";
+import Nav from "./nav";
 import '../css/stepsform.css'
 import { useCreateNewTransactionMutation } from './features/transactions/transactionsSlice'
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+
 
 const SendMoney = () => {
 
@@ -18,8 +19,8 @@ const SendMoney = () => {
     type:"deposit",
   });
   const navigate=useNavigate()
-  const dispatch=useDispatch()
- const [createNewTransation, { isLoading, error }]=useCreateNewTransactionMutation();
+ 
+ const [createNewTransation, { isLoading, error ,isError  }]=useCreateNewTransactionMutation();
 
 console.log("form data is :",formData)
   useEffect(()=>{
@@ -59,26 +60,32 @@ console.log("form data is :",formData)
     }
   };
 
-  return (
+
+  let content=(
+    <>
+    <Nav />
     <div className="multistep-form">
-      <div >
-      {conditionalComponent()}
-      </div>
-   
-      <div className="back-next">
-      {page > 0 && <div><button  onClick={() => setPage(prev=>prev - 1)}>Back</button></div>}
-      <div>
-        <button  onClick={handleSubmit}>
-        { page === 0 || page === 1 ? "Next" : "Submit"}
-        </button>
-      </div>
-      
-      </div>
-      
-     
-      
+    <div>
+       {conditionalComponent()}
     </div>
-  );
+    <div className="back-next">
+      {page > 0 && <div><button  onClick={() => setPage(prev=>prev - 1)}>Back</button></div>}
+    <div>
+      <button  onClick={handleSubmit}>
+      { page === 0 || page === 1 ? "Next" : "Submit"}
+      </button>
+    </div>
+    </div> 
+  </div>
+  </>
+  )
+  if (isLoading) {
+    content = <>Loading...</>;
+  }else if (isError) {
+    content = <>{error}</>;
+  }
+
+  return content
 };
 
 export default SendMoney;

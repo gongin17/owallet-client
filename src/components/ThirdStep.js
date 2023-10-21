@@ -17,7 +17,7 @@ const ThirdStep = ({ formData, setFormData }) => {
 
 useEffect(()=>{
 
-   if(amount===confirmAmount && confirmAmount!=undefined) {
+   if(amount===confirmAmount && confirmAmount!==undefined) {
       setFormData({ ...formData, amount: amount })
   }
 
@@ -27,7 +27,7 @@ useEffect(()=>{
   return (
     
       <>
-       <p style={{color:"white"}}>{amount !== confirmAmount ?"not matching" : null}</p>
+       <p style={{color:"white"}}>{amount !== confirmAmount ? "not matching" : null}</p>
       <div >
       <input
             type="number"

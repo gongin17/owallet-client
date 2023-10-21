@@ -48,7 +48,7 @@ const LoginPersist = () => {
   } else if (isError) {
     content = (
       <p>
-        {error?.data?.message}
+        <p>{error?.data?.message}</p> 
         <Link to={`/`}>Go to login page</Link>
       </p>
     );
