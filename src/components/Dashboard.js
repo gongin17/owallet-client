@@ -14,13 +14,15 @@ import Nav from "./nav";
 import {
   useGetAmountInTransactionsMonthQuery,useGetAmountInTransactionsWeekQuery
   ,useGetAmountInTransactionsTodayQuery,useGetAmountOutTransactionsMonthQuery,
-  useGetAmountOutTransactionsTodayQuery,useGetAmountOutTransactionsWeekQuery
+  useGetAmountOutTransactionsTodayQuery,useGetAmountOutTransactionsWeekQuery,
+  useGetAmountInTransactionsTotalQuery,
+  useGetAmountOutTransactionsTotalQuery
 } from "./features/transactions/transactionsSlice";
 
 
 const Dashboard = () => {
   
-  const [Balance, setBalance] = useState(0);
+  const [Balance, setBalance] = useState(208710);
   const [x, setX] = useState(1);
   const [darkMode, setDarkMode] = useState(false);
 
@@ -31,16 +33,15 @@ const Dashboard = () => {
   const {data: todayAmountOut, } = useGetAmountOutTransactionsTodayQuery();
   const {data: thisWeekAmountOut, } = useGetAmountOutTransactionsWeekQuery();
   const {data: lastMonthAmountOut} = useGetAmountOutTransactionsMonthQuery();
+  const {data: totalAmountIn } = useGetAmountInTransactionsTotalQuery();
+  const {data: totalAmountOut} = useGetAmountOutTransactionsTotalQuery();
 
 
   const navigate=useNavigate()
 
   if (isSuccess) {
-  
-  console.log("amounts of data", todayAmountIn,lastMonthAmountIn,thisWeekAmountIn,
-    todayAmountOut,thisWeekAmountOut,lastMonthAmountOut);
-    console.log("sum", todayAmountIn.sum);
  
+    console.log("=====", totalAmountIn,totalAmountOut);
   }
 
   if (isError) console.log("error is", error);
@@ -70,14 +71,14 @@ const Dashboard = () => {
     1: <div>{todayAmountIn?.sum}</div>,
     7: <div>{thisWeekAmountIn?.sum}</div>,
     30: <div>{lastMonthAmountIn?.sum}</div>,
-    0: <div>Case 4 Content</div>,
+    0: <div>{totalAmountIn?.sum}</div>,
   };
 
   const caseComponentsOut = {
     1: <div>{todayAmountOut?.sum}</div>,
     7: <div>{thisWeekAmountOut?.sum}</div>,
     30: <div>{lastMonthAmountOut?.sum}</div>,
-    0: <div>Case 4 Content</div>,
+    0: <div>{totalAmountOut?.sum}</div>,
   };
 
   {/*
@@ -128,11 +129,11 @@ const Dashboard = () => {
               <button className="btn" onClick={()=>setX(1)}>Today</button>
               <button className="btn" onClick={()=>setX(7)}>7 Days</button>
               <button className="btn" onClick={()=>setX(30)}>30 Days</button>
-              <button className="btn">All</button>
+              <button className="btn" onClick={()=>setX(0)}>All</button>
             </div>
 
             <div className="box-group">
-              <div className="box"><span>Balance </span>{0}</div>
+              <div className="box"><span>Balance </span>{Balance}</div>
               <div className="box"><span>Money in </span>{caseComponentsIn[x]} </div>
               <div className="box"><span>Money out </span>{caseComponentsOut[x]}</div>
             </div>

@@ -25,6 +25,7 @@ const Signup = () => {
     try{
 
       await dispatch(signup({username,password,firstName,lastName,balance,email}))
+      navigate('/')
 
     }catch(err){
       console.log("error",err)

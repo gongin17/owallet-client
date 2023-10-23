@@ -1,16 +1,21 @@
 import React from 'react';
 import {Chart} from 'react-google-charts'
 
-export const data = [
-    ["Task", "Hours per Day"],
-    ["Work", 11],
-    ["Eat", 2],
-    ["Commute", 2],
-    ["Watch TV", 2],
-    ["Sleep", 7],
-  ];
+export  const data = [
+  ['Date', 'Deposits', 'Withdrawals'],
+  [new Date('2023-10-01'), 1000, -500],
+  [new Date('2023-10-02'), 800, -200],
+  [new Date('2023-10-03'), 1200, -300],
+  
+];
+ 
   export const options = {
-    title: "My Daily Activities",
+    title: 'Deposit and Withdrawal Transactions',
+    curveType: 'function',
+    legend: { position: 'bottom' },
+    hAxis: {
+      format: 'MMM d, yyyy', 
+    },
   };
 
 const Charts = () => {

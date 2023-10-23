@@ -19,21 +19,13 @@ export const transacationsApiSlice = apiSlice.injectEndpoints({
         return transactionsAdapter.setAll(initialeState, responseData);
       },
 
-      
-     // providesTags: ["Transaction"],
 
-      
-
-      /* validateStatus:(response,result)=>{
-               return response.status===200 && !result.isError
-          }*/
     }),
     getAmountInTransactionsToday: builder.query({
       query: () => "/api/transaction/today/in/amount",
       
       transformResponse: (responseData) => {
-        console.log("response data ", responseData);
-       // return transactionsAdapter.setAll(initialeState, responseData);
+      
        return responseData;
       },
     }),
@@ -41,9 +33,7 @@ export const transacationsApiSlice = apiSlice.injectEndpoints({
       query: () => "/api/transaction/week/in/amount",
       
       transformResponse: (responseData) => {
-        console.log("response data ", responseData);
-        
-       // return transactionsAdapter.setAll(initialeState, responseData);
+ 
         return responseData;
       },
     }),
@@ -51,8 +41,15 @@ export const transacationsApiSlice = apiSlice.injectEndpoints({
       query: () => "/api/transaction/month/in/amount",
       
       transformResponse: (responseData) => {
-        console.log("response data ", responseData);
-       // return transactionsAdapter.setAll(initialeState, responseData);
+      
+       return responseData;
+      },
+    }),
+     getAmountInTransactionsTotal: builder.query({
+      query: () => "/api/transaction/total/in/amount",
+      
+      transformResponse: (responseData) => {
+        
        return responseData;
       },
     }),
@@ -64,8 +61,7 @@ export const transacationsApiSlice = apiSlice.injectEndpoints({
       query: () => "/api/transaction/today/out/amount",
       
       transformResponse: (responseData) => {
-        console.log("response data ", responseData);
-        //return transactionsAdapter.setAll(initialeState, responseData);
+      
         return responseData;
       },
     }),
@@ -73,9 +69,7 @@ export const transacationsApiSlice = apiSlice.injectEndpoints({
       query: () => "/api/transaction/week/out/amount",
       
       transformResponse: (responseData) => {
-        console.log("response data ", responseData);
-        
-       // return transactionsAdapter.setAll(initialeState, responseData);
+
         return responseData;
       },
     }),
@@ -83,8 +77,13 @@ export const transacationsApiSlice = apiSlice.injectEndpoints({
       query: () => "/api/transaction/month/out/amount",
       
       transformResponse: (responseData) => {
-        console.log("response data ", responseData);
-       // return transactionsAdapter.setAll(initialeState, responseData);
+       return responseData;
+      },
+    }),
+    getAmountOutTransactionsTotal: builder.query({
+      query: () => "/api/transaction/total/out/amount",
+      
+      transformResponse: (responseData) => {
        return responseData;
       },
     }),
@@ -95,12 +94,7 @@ export const transacationsApiSlice = apiSlice.injectEndpoints({
         method: 'POST',
         body:{...formData},
       })
-
     }),
-
-
-   
-
 
   }) 
 
@@ -108,7 +102,8 @@ export const transacationsApiSlice = apiSlice.injectEndpoints({
 
 export const { useGetTransactionsQuery , useCreateNewTransactionMutation ,useGetAmountInTransactionsMonthQuery,
   useGetAmountInTransactionsWeekQuery,useGetAmountInTransactionsTodayQuery,useGetAmountOutTransactionsMonthQuery,
-  useGetAmountOutTransactionsTodayQuery,useGetAmountOutTransactionsWeekQuery
+  useGetAmountOutTransactionsTodayQuery,useGetAmountOutTransactionsWeekQuery,useGetAmountInTransactionsTotalQuery,
+  useGetAmountOutTransactionsTotalQuery
 } = transacationsApiSlice;
 
 export const selectResult =transacationsApiSlice.endpoints.getTransactions.select();

@@ -11,8 +11,20 @@ export const usersSlice=apiSlice.injectsEndpoints(
 
 {
     endPoints:builder =>({
-         getUsers:builder.query({}),
+        
          
+         getUserBalance: builder.query({
+            query: (username) => "/api/user/balance",
+            tagTypes: ["Transaction","User"],
+            
+            body: { username },
+
+            transformResponse: (responseData) => {
+             
+              return responseData
+            },
+      
+          }),
 
 
 

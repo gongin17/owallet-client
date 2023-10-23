@@ -49,8 +49,8 @@ const Login = () => {
       <div className="login"> 
         <div className="content"> 
        <h3>Sign In</h3>
-        {isLoading ?<div>Loading...</div>:null}
-        {isError?<p style={{color:"#ff0000"}}>{error.data.message}</p>:null}
+        {isLoading ?<div>Loading...</div>:""}
+        {isError?<p style={{color:"#ff0000"}}>{error?.data?.message}</p>:""}
 
       <form className="form" onSubmit={handleSubmit}>
         <div className="inputBox">
