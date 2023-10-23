@@ -34,7 +34,7 @@ console.log("form data is :",formData)
    
     if(page===2 ){
       try{
-        await createNewTransation( {  amount: 20, type: "deposit" })
+        await createNewTransation( {  amount:Number(formData.amount) , type:formData.type  })
         navigate("/dashboard")
        
       }catch(err){
